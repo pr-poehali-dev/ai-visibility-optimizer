@@ -92,11 +92,11 @@ function Hero() {
 
         <h1 className="font-manrope text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-6">
           Make Your Website{" "}
-          <span className="gradient-text text-glow">Visible to AI Search</span>
+          <span className="gradient-text text-glow">Show Up in AI Search</span>
         </h1>
 
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          Analyze how AI systems see your website, uncover what limits your visibility, and get a clear path to improving content, structure, and technical readiness for AI-driven discovery.
+          Understand how AI platforms interpret your website, uncover what limits your visibility, and improve your chances of being cited in AI-generated answers.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -178,20 +178,20 @@ function Problem() {
         <div className="text-center mb-16">
           <Label><Icon name="AlertTriangle" size={11} /> Why Now</Label>
           <h2 className="font-manrope text-4xl md:text-5xl font-extrabold tracking-tight mb-5">
-            Traditional SEO Is No Longer{" "}
-            <span className="gradient-text">the Whole Picture</span>
+            Your Website Might Be{" "}
+            <span className="gradient-text">Invisible to AI</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
-            More users are turning to ChatGPT, Perplexity, Gemini, and other AI tools for answers. If your website is not structured, accessible, or understandable for AI systems, it may be overlooked entirely — even if your traditional SEO is in decent shape.
+            More people are discovering brands through AI tools, not just search engines. If your website is hard for AI systems to access, understand, or trust, it may never appear in the answers your audience sees.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            { icon: "EyeOff", title: "Your website may be invisible to AI even if your SEO is solid", color: "text-red-400", bg: "bg-red-500/5 border-red-500/15" },
-            { icon: "ListChecks", title: "AI systems choose which sources to use in answers", color: "text-orange-400", bg: "bg-orange-500/5 border-orange-500/15" },
-            { icon: "Users", title: "Competitors may be showing up where your brand does not", color: "text-yellow-400", bg: "bg-yellow-500/5 border-yellow-500/15" },
-            { icon: "FileQuestion", title: "Without proper structure and access, your site is harder for AI to interpret", color: "text-violet", bg: "bg-violet/5 border-violet/15" },
+            { icon: "EyeOff", title: "Strong SEO does not guarantee AI visibility", color: "text-red-400", bg: "bg-red-500/5 border-red-500/15" },
+            { icon: "ListChecks", title: "AI systems choose which sources to include in answers", color: "text-orange-400", bg: "bg-orange-500/5 border-orange-500/15" },
+            { icon: "Users", title: "Competitors may appear where your brand does not", color: "text-yellow-400", bg: "bg-yellow-500/5 border-yellow-500/15" },
+            { icon: "FileQuestion", title: "Poor structure and missing signals make your site harder to interpret", color: "text-violet", bg: "bg-violet/5 border-violet/15" },
           ].map(({ icon, title, color, bg }) => (
             <div key={title} className={`neo-card rounded-2xl p-6 border ${bg} transition-all duration-300 hover:scale-[1.02]`}>
               <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${bg}`}>
@@ -206,12 +206,12 @@ function Problem() {
   );
 }
 
-function AboutProduct() {
+function ValueSection() {
   const ref = useReveal();
   const steps = [
-    { icon: "ScanSearch", title: "Analyze how AI systems interpret your website" },
+    { icon: "ScanSearch", title: "Analyze how AI platforms interpret your website" },
     { icon: "AlertCircle", title: "Identify issues across content, structure, and technical setup" },
-    { icon: "Wrench", title: "Turn insights into concrete improvements" },
+    { icon: "Wrench", title: "Turn insights into clear next steps" },
   ];
 
   return (
@@ -221,10 +221,11 @@ function AboutProduct() {
         <div className="text-center mb-14">
           <Label><Icon name="Box" size={11} /> Product</Label>
           <h2 className="font-manrope text-4xl md:text-5xl font-extrabold tracking-tight mb-5">
-            What the Product <span className="gradient-text">Does</span>
+            See What's Limiting Your{" "}
+            <span className="gradient-text">AI Visibility</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
-            This platform helps you understand how ready your website is for AI search, shows what may be limiting your visibility, and gives you a practical path to improvement.
+            The platform helps you understand how ready your website is for AI search, identify the issues holding it back, and prioritize the changes that matter most.
           </p>
         </div>
 
@@ -246,14 +247,14 @@ function AboutProduct() {
   );
 }
 
-function WhatWeAnalyze() {
+function AnalysisCategories() {
   const ref = useReveal();
   const cards = [
-    { icon: "Eye", title: "AI Visibility", desc: "Understand how discoverable your site is across AI-driven platforms and answer engines.", color: "from-cyan to-blue-500" },
-    { icon: "FileText", title: "Content Quality", desc: "Evaluate whether your content is clear, useful, and easy for AI systems to understand and cite.", color: "from-violet to-pink-500" },
-    { icon: "Database", title: "Structured Data", desc: "Check whether your schema and data structure help AI interpret your pages, entities, and key information.", color: "from-cyan to-green-400" },
-    { icon: "Settings", title: "Technical Access", desc: "Make sure AI crawlers can access your site and that critical files and signals are properly configured.", color: "from-orange-400 to-yellow-400" },
-    { icon: "Shield", title: "Brand Signals", desc: "Assess the trust and authority signals that help AI systems recognize and reference your brand.", color: "from-violet to-cyan" },
+    { icon: "Eye", title: "AI Visibility", desc: "See how discoverable your website is across AI-driven platforms and answer engines.", color: "from-cyan to-blue-500" },
+    { icon: "FileText", title: "Content & Structure", desc: "Understand whether your content is clear, useful, and easy for AI systems to interpret.", color: "from-violet to-pink-500" },
+    { icon: "Database", title: "Structured Data", desc: "Evaluate how well your schema and JSON-LD help AI understand your pages, entities, and key business information.", color: "from-cyan to-green-400" },
+    { icon: "Settings", title: "Technical Access", desc: "Make sure AI crawlers can access your website and understand what matters most.", color: "from-orange-400 to-yellow-400" },
+    { icon: "Shield", title: "Brand Signals", desc: "Assess the authority and trust signals that support recognition across AI ecosystems.", color: "from-violet to-cyan" },
   ];
 
   return (
@@ -262,7 +263,7 @@ function WhatWeAnalyze() {
         <div className="text-center mb-14">
           <Label><Icon name="Layers" size={11} /> Analysis</Label>
           <h2 className="font-manrope text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
-            What Shapes Your{" "}
+            What Impacts{" "}
             <span className="gradient-text">AI Visibility</span>
           </h2>
         </div>
@@ -283,12 +284,12 @@ function WhatWeAnalyze() {
   );
 }
 
-function CoreFeature() {
+function CorePillar() {
   const ref = useReveal();
   const points = [
-    "AI visibility tracking across relevant topics and prompts",
-    "Competitor comparison and niche context",
-    "Identification of issues limiting citation and discoverability",
+    "Visibility tracking across relevant prompts and topics",
+    "Competitor comparison within your niche",
+    "Key blockers that reduce discoverability",
     "Clear priorities for improvement",
   ];
 
@@ -299,13 +300,13 @@ function CoreFeature() {
       <div className="max-w-5xl mx-auto relative">
         <div className="gradient-border neo-card rounded-3xl p-10 md:p-14">
           <div className="text-center mb-10">
-            <Label><Icon name="BarChart3" size={11} /> Core Feature</Label>
+            <Label><Icon name="BarChart3" size={11} /> AI Visibility & Competitor Tracking</Label>
             <h2 className="font-manrope text-3xl md:text-4xl font-extrabold tracking-tight mb-5">
-              See How AI Sees Your Website —{" "}
-              <span className="gradient-text">and Where Competitors Outperform You</span>
+              See Where You Stand{" "}
+              <span className="gradient-text">in AI Search</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
-              Track your brand's AI visibility, uncover what limits your chances of being cited, and understand where competitors are gaining ground in the new search landscape.
+              Track your brand's visibility across AI-driven experiences, understand where competitors are gaining ground, and uncover what reduces your chances of being cited.
             </p>
           </div>
 
@@ -326,31 +327,34 @@ function CoreFeature() {
 const featureData = [
   {
     icon: "FileText",
-    title: "Make Content and Structure Easier for AI to Understand",
-    text: "Optimize your pages so AI systems can better interpret meaning, entities, answers, and important business information across your website.",
-    points: ["Content structure improvements", "Schema and JSON-LD support", "Clearer information formatting for AI interpretation", "Better preparation for AI citation"],
+    title: "Optimize Content, Schema, and On-Site Structure for AI",
+    label: "Content & Schema Optimization for AI",
+    text: "Improve your pages so AI systems can better understand meaning, structure, entities, and important business information across your website.",
+    points: ["Better content structure and page clarity", "Schema and JSON-LD support", "Stronger on-site organization for AI interpretation", "Improved readiness for AI citation"],
     color: "cyan" as const,
     delay: "0s",
   },
   {
     icon: "Settings",
-    title: "Set Up the Technical Foundation for AI Access",
-    text: "Manage the core files and signals that help AI crawlers access, interpret, and prioritize your website correctly.",
+    title: "Build the Right Technical Foundation for AI Access",
+    label: "AI Crawler Kit",
+    text: "Set up the core technical signals that help AI crawlers access, interpret, and prioritize your website correctly.",
     points: ["robots.txt", "sitemap", "llms.txt", "AI Info Page"],
     color: "violet" as const,
     delay: "0.15s",
   },
   {
     icon: "ShoppingBag",
-    title: "Prepare Product Data for AI Recommendations and Comparisons",
-    text: "For e-commerce and catalog-based websites, improve how product information is structured so AI systems can use it in recommendations, comparisons, and product-related answers.",
-    points: ["Better product data structure", "Clearer attributes and specifications", "Improved readiness for AI comparison use cases", "Support for AI-friendly product discovery"],
+    title: "Enhance Product and Store Content for AI Discovery",
+    label: "Product- and Store-Specific Enhancements",
+    text: "For product-focused and catalog-driven websites, improve how offerings, attributes, and structured details are presented so AI systems can use them in recommendations, comparisons, and buying-related answers.",
+    points: ["Stronger product and store data structure", "Clearer attributes and specifications", "Better comparison readiness", "Improved AI-friendly discovery"],
     color: "green" as const,
     delay: "0.3s",
   },
 ];
 
-function FeatureCard({ icon, title, text, points, color, delay }: (typeof featureData)[0]) {
+function FeatureCard({ icon, title, label, text, points, color, delay }: (typeof featureData)[0]) {
   const ref = useReveal();
   const cls = {
     cyan: { icon: "bg-cyan/10 border-cyan/20 text-cyan", check: "text-cyan", grad: "from-cyan/5" },
@@ -366,6 +370,7 @@ function FeatureCard({ icon, title, text, points, color, delay }: (typeof featur
             <div className={`w-11 h-11 rounded-xl border flex items-center justify-center mb-5 ${cls.icon}`}>
               <Icon name={icon as "FileText"} size={20} />
             </div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">{label}</p>
             <h3 className="font-manrope font-extrabold text-xl mb-3">{title}</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">{text}</p>
           </div>
@@ -386,7 +391,7 @@ function FeatureCard({ icon, title, text, points, color, delay }: (typeof featur
   );
 }
 
-function SupportingFeatures() {
+function FeaturePillars() {
   return (
     <section className="py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 hero-bg opacity-30 pointer-events-none" />
@@ -413,8 +418,8 @@ function Reports() {
   const cards = [
     {
       title: "Short Report",
-      label: "For a quick starting point",
-      text: "A concise snapshot of your website's AI readiness, highlighting the most important issues and immediate recommendations.",
+      label: "A fast starting point",
+      text: "Get a concise snapshot of your website's AI readiness, including the most important issues and practical next steps.",
       items: ["Overall status overview", "Main risk areas", "Essential recommendations", "Clear next steps"],
       icon: "FileText",
       highlight: false,
@@ -422,18 +427,18 @@ function Reports() {
     },
     {
       title: "Detailed Report",
-      label: "For deeper insight",
-      text: "A more complete audit of your AI visibility, content clarity, structure, technical readiness, and competitive signals.",
-      items: ["Expanded category-based evaluation", "Detailed issues and explanations", "Prioritized recommendations", "Broader visibility and readiness analysis"],
+      label: "A deeper audit",
+      text: "Take a closer look at your AI visibility, content clarity, structure, technical setup, and competitive landscape.",
+      items: ["Expanded analysis by category", "Detailed issues and explanations", "Prioritized recommendations", "Broader readiness insights"],
       icon: "BarChart3",
       highlight: true,
       cta: "Get Detailed Report",
     },
     {
       title: "Proposal",
-      label: "For teams ready to move forward",
-      text: "A strategic proposal with a detailed comparative niche analysis, competitor context, and recommended next steps for collaboration.",
-      items: ["Comparative niche analysis", "Competitive landscape review", "Growth opportunities", "Recommended direction for implementation"],
+      label: "A path to implementation",
+      text: "Move from analysis to action with a strategic proposal that includes niche context, competitor comparison, and recommended next steps.",
+      items: ["Comparative niche analysis", "Competitive landscape review", "Growth opportunities", "Recommended direction for collaboration"],
       icon: "Presentation",
       highlight: false,
       cta: "Request Proposal",
@@ -494,9 +499,9 @@ function Reports() {
 
 const howSteps = [
   { icon: "Globe", title: "Submit your website for analysis" },
-  { icon: "ScanSearch", title: "We assess AI visibility, content structure, technical setup, and supporting signals" },
-  { icon: "FileCheck", title: "You receive a short or detailed report with findings and recommendations" },
-  { icon: "Rocket", title: "If needed, move forward with a strategy proposal and implementation support" },
+  { icon: "ScanSearch", title: "We evaluate AI visibility, content structure, schema, technical setup, and supporting signals" },
+  { icon: "FileCheck", title: "Receive a short or detailed report with findings and recommendations" },
+  { icon: "Rocket", title: "Move forward with a proposal and implementation support if needed" },
 ];
 
 function StepCard({ icon, title, index }: { icon: string; title: string; index: number }) {
@@ -539,11 +544,11 @@ function HowItWorks() {
 function WhoItsFor() {
   const ref = useReveal();
   const audiences = [
-    { icon: "TrendingUp", title: "SEO and Growth Teams", desc: "Adapt your search strategy to AI-driven discovery", color: "cyan" },
-    { icon: "Cpu", title: "SaaS Companies", desc: "Improve your chances of being surfaced and referenced in AI answers", color: "violet" },
-    { icon: "ShoppingBag", title: "E-commerce and Retail Brands", desc: "Prepare products and category pages for AI recommendations", color: "green" },
-    { icon: "Users", title: "Agencies and Digital Teams", desc: "Offer clients a new layer of visibility beyond traditional SEO", color: "cyan" },
-    { icon: "Trophy", title: "Brands in Competitive Niches", desc: "Understand where AI visibility is being won or lost", color: "violet" },
+    { icon: "TrendingUp", title: "SEO & Growth Teams", desc: "Adapt your strategy for AI-driven discovery", color: "cyan" },
+    { icon: "Cpu", title: "SaaS Companies", desc: "Increase your chances of being surfaced in AI answers", color: "violet" },
+    { icon: "ShoppingBag", title: "E-commerce Brands", desc: "Prepare products and category pages for AI recommendations", color: "green" },
+    { icon: "Users", title: "Agencies & Digital Teams", desc: "Offer clients a new layer of visibility beyond traditional SEO", color: "cyan" },
+    { icon: "Trophy", title: "Competitive Brands", desc: "Understand where AI visibility is being won or lost", color: "violet" },
   ];
   const colorMap: Record<string, string> = {
     cyan: "border-cyan/15 group-hover:border-cyan/30",
@@ -586,8 +591,8 @@ function WhoItsFor() {
 function Testimonials() {
   const ref = useReveal();
   const quotes = [
-    { quote: "We gained a much clearer view of how AI systems interpret our website — and where we were being overlooked.", name: "Sarah K.", role: "Head of SEO, SaaS Platform", avatar: "SK" },
-    { quote: "The analysis helped us uncover technical blockers and improve AI readiness much faster.", name: "Marcus L.", role: "Growth Lead, E-commerce Brand", avatar: "ML" },
+    { quote: "We finally got a clearer view of how AI platforms interpret our website — and where we were being overlooked.", name: "Sarah K.", role: "Head of SEO, SaaS Platform", avatar: "SK" },
+    { quote: "The analysis helped us identify technical blockers and prioritize improvements much faster.", name: "Marcus L.", role: "Growth Lead, E-commerce Brand", avatar: "ML" },
   ];
 
   return (
@@ -597,7 +602,7 @@ function Testimonials() {
         <div className="text-center mb-14">
           <Label><Icon name="Quote" size={11} /> Testimonials</Label>
           <h2 className="font-manrope text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
-            What Teams <span className="gradient-text">Are Saying</span>
+            What Teams <span className="gradient-text">Are Seeing</span>
           </h2>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
@@ -653,11 +658,10 @@ function FinalCTA() {
           Start Today
         </div>
         <h2 className="font-manrope text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-          Start with a Report —{" "}
-          <span className="gradient-text">and See How Ready</span> Your Website Is for AI
+          Start with a <span className="gradient-text">Report</span>
         </h2>
         <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-xl mx-auto">
-          Get a clear view of what may be limiting your AI visibility, uncover the most important issues, and choose the right next step — from a quick report to a deeper strategic engagement.
+          Get a clearer picture of what limits your AI visibility and choose the next step that fits your team — from a quick assessment to a deeper strategic engagement.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button className="shimmer-btn font-manrope font-bold text-sm px-10 py-4 rounded-full shadow-2xl shadow-cyan/25 hover:scale-105 active:scale-95 transition-all duration-300 glow-cyan">
@@ -733,10 +737,10 @@ export default function Index() {
       <Navbar />
       <Hero />
       <Problem />
-      <AboutProduct />
-      <WhatWeAnalyze />
-      <CoreFeature />
-      <SupportingFeatures />
+      <ValueSection />
+      <AnalysisCategories />
+      <CorePillar />
+      <FeaturePillars />
       <Reports />
       <HowItWorks />
       <WhoItsFor />
