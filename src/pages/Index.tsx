@@ -451,77 +451,113 @@ function CoreCapabilities() {
   );
 }
 
-/* ─── Reports — Comparison module ─── */
+/* ─── Reports — Two report formats + follow-up support ─── */
 function Reports() {
-  const ref = useStagger();
-  const plans = [
+  const cardsRef = useStagger();
+  const supportRef = useReveal();
+
+  const reports = [
     {
+      icon: "FileText",
       title: "Short Report",
-      label: "A fast starting point",
-      text: "Get a concise snapshot of your website's AI readiness, including the most important issues and practical next steps.",
+      label: "Quick overview",
+      text: "A concise snapshot of your website's AI readiness, highlighting the most important issues and practical next steps.",
       items: ["Overall status overview", "Main risk areas", "Essential recommendations", "Clear next steps"],
       cta: "Get Short Report",
-      highlight: false,
+      accent: "cyan",
     },
     {
+      icon: "FileSearch",
       title: "Detailed Report",
-      label: "A deeper audit",
-      text: "Take a closer look at your AI visibility, content clarity, structure, technical setup, and competitive landscape.",
+      label: "Deeper analysis",
+      text: "A more complete view of your AI visibility, content structure, schema, technical setup, and competitive context.",
       items: ["Expanded analysis by category", "Detailed issues and explanations", "Prioritized recommendations", "Broader readiness insights"],
       cta: "Get Detailed Report",
-      highlight: true,
-    },
-    {
-      title: "Proposal",
-      label: "A path to implementation",
-      text: "Move from analysis to action with a strategic proposal that includes niche context, competitor comparison, and recommended next steps.",
-      items: ["Comparative niche analysis", "Competitive landscape review", "Growth opportunities", "Recommended direction for collaboration"],
-      cta: "Request Proposal",
-      highlight: false,
+      accent: "violet",
     },
   ];
 
   return (
     <section className="py-28 px-6" id="reports">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <SectionHead
           tag={<Tag><Icon name="BarChart3" size={10} /> Reports</Tag>}
-          title={<>Choose the Right <span className="gradient-text">Level of Analysis</span></>}
+          title={<>Start with the Right <span className="gradient-text">Report</span></>}
+          text="Enter your website URL, get an AI visibility analysis, and choose the level of insight that matches your needs."
         />
 
-        <div ref={ref} className="stagger-children grid md:grid-cols-3 gap-5">
-          {plans.map(({ title, label, text, items, cta, highlight }) => (
-            <div
-              key={title}
-              className={`surface-card rounded-2xl p-6 flex flex-col relative overflow-hidden ${highlight ? "border-cyan/25 ring-1 ring-cyan/10 bg-gradient-to-b from-cyan/[0.03] to-transparent" : ""}`}
-            >
-              {highlight && <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-cyan to-transparent" />}
-              {highlight && (
-                <span className="absolute top-3 right-3 text-[9px] font-bold px-2 py-0.5 rounded-full bg-cyan/10 text-cyan border border-cyan/20">
-                  Most Popular
-                </span>
-              )}
+        <div ref={cardsRef} className="stagger-children grid md:grid-cols-2 gap-6 mb-10">
+          {reports.map(({ icon, title, label, text, items, cta, accent }) => {
+            const isViolet = accent === "violet";
+            return (
+              <div
+                key={title}
+                className={`surface-card rounded-2xl p-7 flex flex-col relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                  isViolet
+                    ? "border-violet/20 ring-1 ring-violet/8 hover:shadow-violet/5"
+                    : "hover:shadow-cyan/5"
+                }`}
+              >
+                {isViolet && <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-violet/40 to-transparent" />}
 
-              <span className="text-[11px] text-muted-foreground/50 mb-1">{label}</span>
-              <h3 className="font-manrope font-extrabold text-xl mb-2">{title}</h3>
-              <p className="text-[13px] text-muted-foreground leading-relaxed mb-6 flex-1">{text}</p>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                    isViolet ? "bg-violet/10 text-violet" : "bg-cyan/10 text-cyan"
+                  }`}>
+                    <Icon name={icon as "FileText"} size={18} />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/50 block">{label}</span>
+                    <h3 className="font-manrope font-extrabold text-lg leading-tight">{title}</h3>
+                  </div>
+                </div>
 
-              <ul className="space-y-2 mb-6">
-                {items.map((it) => (
-                  <li key={it} className="flex items-start gap-2 text-[13px]">
-                    <Icon name="CheckCircle2" size={13} className="text-cyan mt-0.5 flex-shrink-0" />
-                    {it}
-                  </li>
-                ))}
-              </ul>
+                <p className="text-[13px] text-muted-foreground leading-relaxed mb-6">{text}</p>
 
-              {highlight ? (
-                <Btn className="w-full justify-center text-xs">{cta}</Btn>
-              ) : (
-                <Btn variant="outline" className="w-full justify-center text-xs">{cta}</Btn>
-              )}
+                <div className="mb-6 flex-1">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/40 mb-3">Included</p>
+                  <ul className="space-y-2.5">
+                    {items.map((it) => (
+                      <li key={it} className="flex items-start gap-2.5 text-[13px]">
+                        <Icon name="CheckCircle2" size={14} className={`mt-0.5 flex-shrink-0 ${isViolet ? "text-violet" : "text-cyan"}`} />
+                        {it}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {isViolet ? (
+                  <Btn className="w-full justify-center text-xs">{cta}</Btn>
+                ) : (
+                  <Btn variant="outline" className="w-full justify-center text-xs">{cta}</Btn>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        <div ref={supportRef} className="reveal">
+          <div className="relative rounded-2xl border border-white/[0.06] bg-white/[0.015] p-7 md:p-9 flex flex-col md:flex-row items-start md:items-center gap-6 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan/[0.02] via-transparent to-violet/[0.02] pointer-events-none" />
+
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan/8 to-violet/8 border border-white/[0.06] flex items-center justify-center flex-shrink-0 relative">
+              <Icon name="Headphones" size={20} className="text-muted-foreground" />
             </div>
-          ))}
+
+            <div className="flex-1 relative">
+              <h3 className="font-manrope font-bold text-base mb-1.5">Need Help Beyond the Report?</h3>
+              <p className="text-[13px] text-muted-foreground leading-relaxed max-w-xl">
+                If you need support after the report, our team can help you prioritize improvements, review your niche in more detail, and define the next steps for implementation.
+              </p>
+            </div>
+
+            <div className="relative flex-shrink-0">
+              <Btn variant="outline" className="text-xs whitespace-nowrap">
+                <Icon name="MessageCircle" size={13} className="text-cyan" />
+                Talk to Us
+              </Btn>
+            </div>
+          </div>
         </div>
       </div>
     </section>
